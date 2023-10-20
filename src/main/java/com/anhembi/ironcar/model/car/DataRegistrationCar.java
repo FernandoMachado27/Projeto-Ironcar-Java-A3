@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model;
+package com.anhembi.ironcar.model.car;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
