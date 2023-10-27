@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model.car;
+package com.anhembi.ironcar.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
