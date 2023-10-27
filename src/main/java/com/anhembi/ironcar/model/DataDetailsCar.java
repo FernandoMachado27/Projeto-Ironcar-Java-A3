@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model.car;
+package com.anhembi.ironcar.model;
 
 public record DataDetailsCar(Long id, String name, String brand, String model, String year) {
 
