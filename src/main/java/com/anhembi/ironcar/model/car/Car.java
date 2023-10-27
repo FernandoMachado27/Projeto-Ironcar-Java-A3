@@ -35,4 +35,22 @@ public class Car {
 		this.year = carData.year();
 	}
 
+	public void updateCar(@Valid DataUpdateCar dataUpdateCar) {
+		if (dataUpdateCar.name() != null) {
+			this.name = dataUpdateCar.name();
+		}
+		
+		if (dataUpdateCar.brand() != null) {
+			this.brand = dataUpdateCar.brand();
+		}
+		
+		if (dataUpdateCar.model() != null) {
+			this.model = dataUpdateCar.model();
+		}
+		
+		if (dataUpdateCar.year() != null) {
+			this.year = dataUpdateCar.year();
+		}
+	}
+
 }
