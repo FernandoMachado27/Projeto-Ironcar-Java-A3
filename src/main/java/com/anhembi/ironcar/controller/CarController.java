@@ -62,7 +62,7 @@ public class CarController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity delete(@PathVariable Long id) {
 		var car = repository.getReferenceById(id);
