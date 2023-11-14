@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model;
+package com.anhembi.ironcar.model.car;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,12 +27,14 @@ public class Car {
 	private String brand;
 	private String model;
 	private String year;
+	private String plan;
 	
 	public Car(@Valid DataRegistrationCar carData) {
 		this.name = carData.name();
 		this.brand = carData.brand();
 		this.model = carData.model();
 		this.year = carData.year();
+		this.plan = carData.plan();
 	}
 
 	public void updateCar(@Valid DataUpdateCar dataUpdateCar) {
@@ -50,6 +52,10 @@ public class Car {
 		
 		if (dataUpdateCar.year() != null) {
 			this.year = dataUpdateCar.year();
+		}
+		
+		if (dataUpdateCar.plan() != null) {
+			this.plan = dataUpdateCar.plan();
 		}
 	}
 

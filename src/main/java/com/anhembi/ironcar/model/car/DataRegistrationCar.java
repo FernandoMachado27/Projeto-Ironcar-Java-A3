@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model;
+package com.anhembi.ironcar.model.car;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -12,6 +12,8 @@ public record DataRegistrationCar(
 		String model,
 		@NotBlank(message = "Ano é obrigatório")
 		@Pattern(regexp = "\\d{4}", message = "Formato do ano é inválido")
-		String year) {
+		String year,
+		@NotBlank(message = "Opção é obrigatória")
+        String plan) {
 
 }
