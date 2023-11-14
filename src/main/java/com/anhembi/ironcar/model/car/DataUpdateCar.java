@@ -1,4 +1,4 @@
-package com.anhembi.ironcar.model;
+package com.anhembi.ironcar.model.car;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -8,6 +8,7 @@ public record DataUpdateCar(
 		String name,
 		String brand,
 		String model,
-		String year) {
+		String year,
+		String plan) {
 
 }

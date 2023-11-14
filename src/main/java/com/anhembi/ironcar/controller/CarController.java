@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.anhembi.ironcar.model.Car;
-import com.anhembi.ironcar.model.DataDetailsCar;
-import com.anhembi.ironcar.model.DataRegistrationCar;
-import com.anhembi.ironcar.model.DataUpdateCar;
+import com.anhembi.ironcar.model.car.Car;
+import com.anhembi.ironcar.model.car.DataDetailsCar;
+import com.anhembi.ironcar.model.car.DataRegistrationCar;
+import com.anhembi.ironcar.model.car.DataUpdateCar;
 import com.anhembi.ironcar.repository.CarRepository;
 
 import jakarta.validation.Valid;
@@ -62,7 +62,7 @@ public class CarController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity delete(@PathVariable Long id) {
 		var car = repository.getReferenceById(id);

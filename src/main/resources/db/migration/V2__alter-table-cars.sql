@@ -1,0 +1,2 @@
+ALTER TABLE cars
+ADD COLUMN plan VARCHAR(50);
