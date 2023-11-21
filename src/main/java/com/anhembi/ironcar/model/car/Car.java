@@ -28,6 +28,7 @@ public class Car {
 	private String model;
 	private String year;
 	private String plan;
+	private String plate;
 	
 	public Car(@Valid DataRegistrationCar carData) {
 		this.name = carData.name();
@@ -35,6 +36,7 @@ public class Car {
 		this.model = carData.model();
 		this.year = carData.year();
 		this.plan = carData.plan();
+		this.plate = carData.plate();
 	}
 
 	public void updateCar(@Valid DataUpdateCar dataUpdateCar) {
@@ -56,6 +58,9 @@ public class Car {
 		
 		if (dataUpdateCar.plan() != null) {
 			this.plan = dataUpdateCar.plan();
+		}
+		if (dataUpdateCar.plate() != null) {
+			this.plate = dataUpdateCar.plate();
 		}
 	}
 
