@@ -14,6 +14,8 @@ public record DataRegistrationCar(
 		@Pattern(regexp = "\\d{4}", message = "Formato do ano é inválido")
 		String year,
 		@NotBlank(message = "Opção é obrigatória")
-        String plan) {
+        String plan,
+		@NotBlank(message = "Placa é obrigatório")
+        String plate) {
 
 }

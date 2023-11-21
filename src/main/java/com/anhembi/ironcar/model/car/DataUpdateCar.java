@@ -9,6 +9,7 @@ public record DataUpdateCar(
 		String brand,
 		String model,
 		String year,
-		String plan) {
+		String plan,
+		String plate) {
 
 }
