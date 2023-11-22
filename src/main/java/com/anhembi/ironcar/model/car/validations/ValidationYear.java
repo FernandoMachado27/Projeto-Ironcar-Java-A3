@@ -2,7 +2,7 @@ package com.anhembi.ironcar.model.car.validations;
 
 import org.springframework.stereotype.Component;
 
-import com.anhembi.ironcar.model.ValidacaoException;
+import com.anhembi.ironcar.model.ValidationException;
 import com.anhembi.ironcar.model.car.DataRegistrationCar;
 
 @Component
@@ -15,7 +15,7 @@ public class ValidationYear implements ValidationRegisterCar{
 		int yearLimit = 2000;
 		
 		if(year < yearLimit) {
-			throw new ValidacaoException("Permitido cadastrar apenas carros fabricados a partir de 2000.");
+			throw new ValidationException("Permitido cadastrar apenas carros fabricados a partir de 2000.");
 		}
 	}
 

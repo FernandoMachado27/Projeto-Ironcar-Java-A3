@@ -6,4 +6,6 @@ import com.anhembi.ironcar.model.car.Car;
 
 public interface CarRepository extends JpaRepository<Car, Long>{
 
+	boolean existsByPlate(String plate);
+
 }
