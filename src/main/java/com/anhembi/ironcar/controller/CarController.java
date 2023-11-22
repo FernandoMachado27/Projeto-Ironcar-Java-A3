@@ -20,6 +20,7 @@ import com.anhembi.ironcar.model.car.Car;
 import com.anhembi.ironcar.model.car.DataDetailsCar;
 import com.anhembi.ironcar.model.car.DataRegistrationCar;
 import com.anhembi.ironcar.model.car.DataUpdateCar;
+import com.anhembi.ironcar.model.car.validations.ValidationRegisterCar;
 import com.anhembi.ironcar.repository.CarRepository;
 
 import jakarta.validation.Valid;
@@ -31,15 +32,19 @@ public class CarController {
 	@Autowired
 	private CarRepository repository;
 	
+	@Autowired
+	private List<ValidationRegisterCar> validatons;
+	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping
 	@Transactional
 	public ResponseEntity register(@RequestBody @Valid DataRegistrationCar carData, UriComponentsBuilder uriBuilder) {
 		var car = new Car(carData);
+		
+		validatons.forEach(v -> v.validate(carData));
 		repository.save(car);
 		
 		var uri = uriBuilder.path("/car/{id}").buildAndExpand(car.getId()).toUri();
-		
 		return ResponseEntity.created(uri).body(new DataDetailsCar(car));
 	}
 	
